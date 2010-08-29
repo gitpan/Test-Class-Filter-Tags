@@ -10,7 +10,7 @@ use Test::Class;
 
 use base qw( Exporter );
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 # import the 'Tags' attribute into the caller
 our @EXPORT = qw( Tags );
@@ -168,7 +168,8 @@ attributes or not.
 
 By using this class, you'll get the 'Tags' attribute imported into your
 namespace.  This is required to be able to add B<Tags> attribute to your
-test methods.
+test methods.  This will also cause L<Attribute::Method::Tags> to be
+pre-pended to the ISA of the using class.
 
 =head1 METHODS
 
@@ -199,6 +200,11 @@ both).
 =item Test::Class
 
 This class is implemented via the Test::Class filtering mechanism.
+
+=item Attributes::Method::Tag
+
+This class supplies the 'Tags' attribute to consuming classes.  Note that this
+will alsp be pre-pended to the @ISA for any consuming class.
 
 =back
 

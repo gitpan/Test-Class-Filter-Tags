@@ -80,7 +80,8 @@ DESCRIPTION
 IMPORTS
     By using this class, you'll get the 'Tags' attribute imported into your
     namespace. This is required to be able to add Tags attribute to your
-    test methods.
+    test methods. This will also cause Attribute::Method::Tags to be
+    pre-pended to the ISA of the using class.
 
 METHODS
     method_has_tag( $class, $method, $tag )
@@ -100,6 +101,11 @@ TAGS ADDITIVE OVER INHERITANCE
 SEE ALSO
     Test::Class
         This class is implemented via the Test::Class filtering mechanism.
+
+    Attributes::Method::Tag
+        This class supplies the 'Tags' attribute to consuming classes. Note
+        that this will alsp be pre-pended to the @ISA for any consuming
+        class.
 
 AUTHOR
     Mark Morgan <makk384@gmail.com>
